@@ -22,3 +22,4 @@ security:
 
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/pics, roles: IS_AUTHENTICATED_ANONYMOUSLY }

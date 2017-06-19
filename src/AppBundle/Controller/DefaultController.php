@@ -26,6 +26,7 @@ class DefaultController extends Controller
     public function picsAction(Request $request)
     {
         // replace this example code with whatever you need
+        var_dump($this->getUser());
         return $this->render('default/pics.html.twig');
     }
 }

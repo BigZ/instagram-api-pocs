@@ -1,0 +1,24 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+
+    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        in_memory:
+            memory: ~
+
+    firewalls:
+        secured_area:
+            anonymous: ~
+            oauth:
+                resource_owners:
+                    instagram:           "/login/check-instagram"
+                login_path:        /login
+                use_forward:       false
+                failure_path:      /login
+
+                oauth_user_provider:
+                    service: hwi_oauth.user.provider
+
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
